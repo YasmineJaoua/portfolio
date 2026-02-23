@@ -6,9 +6,9 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    // base can be set via env VITE_BASE (e.g. "/repo-name/") for GitHub Pages
-    // When running in GitHub Actions, use relative base to support pages hosting
-    base: env.VITE_BASE || (process.env.GITHUB_ACTIONS ? './' : '/'),
+    // Use a relative base by default so built assets load correctly
+    // on GitHub Pages (project pages or custom domains).
+    base: env.VITE_BASE || './',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

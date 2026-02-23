@@ -1,0 +1,5 @@
+{
+  "name": "CyberSentinel Portfolio",
+  "description": "A modern, minimal, cybersecurity-themed personal portfolio for a computer science student featuring TryHackMe integration and Redux state management.",
+  "requestFramePermissions": []
+}
